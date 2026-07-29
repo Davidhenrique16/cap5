@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Café com Receita</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #fbf3e7;
+    color: #4a3324;
+    padding: 40px 16px;
+  }
+  header { text-align: center; margin-bottom: 40px; }
+  header h1 { font-size: 2.3rem; margin: 0; color: #7a4a24; }
+  header p { color: #a17651; margin-top: 8px; font-style: italic; }
+  main { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+  .post {
+    background: #fffaf2;
+    border: 1px solid #e6d2b5;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 4px 14px rgba(122, 74, 36, 0.12);
+  }
+  .post h2 { margin-top: 0; color: #8c5a2b; }
+  .post p { line-height: 1.6; }
+  .tag {
+    display: inline-block;
+    background: #d98e4a;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+  }
+  .reacoes { display: flex; gap: 12px; margin-top: 16px; }
+  button {
+    display: flex; align-items: center; gap: 8px;
+    background: #f1e0c8; color: #4a3324;
+    border: 1px solid #d9bb8f; border-radius: 10px;
+    padding: 8px 14px; font-size: 1rem; cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  button:hover { background: #e6cba0; transform: translateY(-2px); }
+  button:active { transform: scale(0.95); }
+  button span { font-weight: bold; color: #7a4a24; }
+  footer { text-align: center; margin-top: 48px; color: #a17651; font-size: 0.85rem; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>☕ Café com Receita</h1>
+    <p>Uma xícara boa e uma receita melhor ainda</p>
+  </header>
+  <main>
+    <article class="post">
+      <span class="tag">DOCE</span>
+      <h2>Bolo de fubá cremoso, do jeito da vovó</h2>
+      <p>Aquele bolo simples, com casquinha por fora e centro molhadinho, que combina perfeitamente com um café coado na hora.</p>
+      <div class="reacoes">
+        <button>☕<span>0</span></button>
+        <button>😋<span>0</span></button>
+        <button>👏<span>0</span></button>
+      </div>
+    </article>
+    <article class="post">
+      <span class="tag">BEBIDA</span>
+      <h2>Como fazer um café gelado cremoso em casa</h2>
+      <p>Sem máquina de espresso, sem complicação: só café forte, gelo e um pouco de leite condensado batidos no liquidificador.</p>
+      <div class="reacoes">
+        <button>☕<span>0</span></button>
+        <button>😋<span>0</span></button>
+        <button>👏<span>0</span></button>
+      </div>
+    </article>
+    <article class="post">
+      <span class="tag">SALGADO</span>
+      <h2>Pão de queijo mineiro na airfryer</h2>
+      <p>A crocância por fora e o fio de queijo por dentro, com metade do tempo de forno tradicional.</p>
+      <div class="reacoes">
+        <button>☕<span>0</span></button>
+        <button>😋<span>0</span></button>
+        <button>👏<span>0</span></button>
+      </div>
+    </article>
+  </main>
+  <footer>Feito com carinho para quem ama parar tudo pra tomar um café.</footer>
+<script>
+  const botoes = document.querySelectorAll("button");
+  botoes.forEach(function (botao) {
+    botao.addEventListener("click", botaoClicado);
+    function botaoClicado() {
+      let contador = botao.querySelector("span");
+      contador.textContent++;
+    }
+  });
+</script>
+</body>
+</html>
